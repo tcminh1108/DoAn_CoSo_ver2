@@ -48,6 +48,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -120,10 +121,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbQLNongsan.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbQLNongsan.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -198,6 +205,52 @@
     <Content Include="img_giaodien\product-7.jpg" />
     <Content Include="img_giaodien\product-8.jpg" />
     <Content Include="img_giaodien\product-9.jpg" />
+    <Content Include="img_sanpham\bi_do.jpg" />
+    <Content Include="img_sanpham\cam_sanh.jpg" />
+    <Content Include="img_sanpham\ca_chua.jpg" />
+    <Content Include="img_sanpham\dau_nhat.jpg" />
+    <Content Include="img_sanpham\dua_chuot.jpg" />
+    <Content Include="img_sanpham\dua_luoi.jpg" />
+    <Content Include="img_sanpham\hach_kho.jpg" />
+    <Content Include="img_sanpham\hanh_baro.jpg" />
+    <Content Include="img_sanpham\hanh_nhan.jpg" />
+    <Content Include="img_sanpham\hanh_tia.jpg" />
+    <Content Include="img_sanpham\hatdieu.jpg" />
+    <Content Include="img_sanpham\hat_dieu.jpg" />
+    <Content Include="img_sanpham\hat_mac_ca.jpg" />
+    <Content Include="img_sanpham\hat_phi.jpg" />
+    <Content Include="img_sanpham\hat_sen.jpg" />
+    <Content Include="img_sanpham\hat_uoi.jpg" />
+    <Content Include="img_sanpham\hoa_atiso.jpg" />
+    <Content Include="img_sanpham\hong_xiem.jpg" />
+    <Content Include="img_sanpham\kiwi.jpg" />
+    <Content Include="img_sanpham\mangtay.jpg" />
+    <Content Include="img_sanpham\matong.jpg" />
+    <Content Include="img_sanpham\mat_ong.jpg" />
+    <Content Include="img_sanpham\mat_ong_bac_ha.jpg" />
+    <Content Include="img_sanpham\mat_ong_gung.jpg" />
+    <Content Include="img_sanpham\na.jpg" />
+    <Content Include="img_sanpham\nhan_long.jpg" />
+    <Content Include="img_sanpham\o_mai.jpg" />
+    <Content Include="img_sanpham\rau_cai.jpg" />
+    <Content Include="img_sanpham\rau_can_tay.jpg" />
+    <Content Include="img_sanpham\rau_mui.jpg" />
+    <Content Include="img_sanpham\rau_muong.jpg" />
+    <Content Include="img_sanpham\salach.jpg" />
+    <Content Include="img_sanpham\sa_nhan.jpg" />
+    <Content Include="img_sanpham\sup_lo.jpg" />
+    <Content Include="img_sanpham\sup_lo_xanh.jpg" />
+    <Content Include="img_sanpham\tao_xanh.jpg" />
+    <Content Include="img_sanpham\thanh_long.jpg" />
+    <Content Include="img_sanpham\thanh_mai.jpg" />
+    <Content Include="img_sanpham\thao_qua.jpg" />
+    <Content Include="img_sanpham\tinh_dau_dua.jpg" />
+    <Content Include="img_sanpham\tinh_dau_gung.jpg" />
+    <Content Include="img_sanpham\tinh_dau_hoa_hong.jpg" />
+    <Content Include="img_sanpham\tinh_dau_nghe.jpg" />
+    <Content Include="img_sanpham\vu_sua.jpg" />
+    <Content Include="img_sanpham\xa_lach.jpg" />
+    <Content Include="img_sanpham\xoai_tuong.jpg" />
     <Content Include="js\aos.js" />
     <Content Include="js\bootstrap-datepicker.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -215,6 +268,48 @@
     <Content Include="js\popper.min.js" />
     <Content Include="js\range.js" />
     <Content Include="js\scrollax.min.js" />
+    <Content Include="Login\css\main.css" />
+    <Content Include="Login\css\util.css" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Login\fonts\montserrat\OFL.txt" />
+    <Content Include="Login\images\bg-01.jpg" />
+    <Content Include="Login\images\icons\favicon.ico" />
+    <Content Include="Login\js\main.js" />
+    <Content Include="Login\vendor\animate\animate.css" />
+    <Content Include="Login\vendor\animsition\css\animsition.css" />
+    <Content Include="Login\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Login\vendor\animsition\js\animsition.js" />
+    <Content Include="Login\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Login\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Login\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Login\vendor\bootstrap\js\popper.js" />
+    <Content Include="Login\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Login\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Login\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Login\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Login\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Login\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Login\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Login\vendor\daterangepicker\moment.js" />
+    <Content Include="Login\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Login\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Login\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Login\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Login\vendor\select2\select2.css" />
+    <Content Include="Login\vendor\select2\select2.js" />
+    <Content Include="Login\vendor\select2\select2.min.css" />
+    <Content Include="Login\vendor\select2\select2.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="css\.DS_Store" />
@@ -245,6 +340,93 @@
     <Content Include="fonts\open-iconic\open-iconic.woff" />
     <Content Include="img_giaodien\.DS_Store" />
     <Content Include="js\.DS_Store" />
+    <Content Include="Models\dbQLNongsan.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbQLNongsan.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Login\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Login\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Login\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Login\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Login\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Login\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="Models\dbQLNongsan.dbml.layout">
+      <DependentUpon>dbQLNongsan.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -269,13 +451,19 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LayoutTrangChu.cshtml" />
     <Content Include="Views\Shared\_LayoutSanPham.cshtml" />
-    <Content Include="Views\TrangChu\Index_TrangChu.cshtml" />
     <Content Include="Views\SanPham\Index_SanPham.cshtml" />
+    <Content Include="Views\SanPham\LaySPTheoLoai.cshtml" />
+    <Content Include="Views\SanPham\LayCT_SanPham.cshtml" />
+    <Content Include="Views\Shared\_LayoutCT_SanPham.cshtml" />
+    <Content Include="Views\Shared\_LayoutDangKy.cshtml" />
+    <Content Include="Views\Shared\_LayoutDangNhap.cshtml" />
+    <Content Include="Views\NguoiDung\DangNhap.cshtml" />
+    <Content Include="Views\NguoiDung\DangKy.cshtml" />
+    <Content Include="Views\TrangChu\Index_TrangChu.cshtml" />
+    <Content Include="Views\TrangChu\DangXuat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts_vs\glyphicons-halflings-regular.woff2" />
@@ -289,6 +477,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

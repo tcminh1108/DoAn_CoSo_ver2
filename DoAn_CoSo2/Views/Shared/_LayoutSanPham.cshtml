@@ -73,15 +73,22 @@
                     </li>
                     <li class="nav-item"><a href="about.html" class="nav-link">Thông tin shop</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Liên hệ</a></li>
-                    <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-
+                    @if (Session["hotenkh"] != null)
+                    {
+                        <li class="nav-item cta cta-colored"><a class="nav-link" style="color: forestgreen"> <span class="icon-user"></span> @Session["hotenkh"]</a></li>
+                        <li class="nav-item cta cta-colored"><a href="@Url.Action("DangXuat","TrangChu")" class="nav-link" style="color: red"> <span class="icon-exit_to_app"></span> Đăng Xuất</a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-item cta cta-colored"><a href="@Url.Action("DangNhap","NguoiDung")" class="nav-link" style="color: forestgreen"> <span class="icon-account_circle"></span> Đăng Nhập</a></li>
+                    }
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Banner -->
-    <div class="hero-wrap hero-bread" style="background-image: url('../img_giaodien/bg_1.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url(../img_giaodien/bg_2.jpg);">
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
@@ -97,11 +104,11 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 mb-5 text-center">
                     <ul class="product-category">
-                        <li><a href="#" class="active">Tất cả</a></li>
-                        <li><a href="#">Rau củ quả</a></li>
-                        <li><a href="#">Các loại hạt</a></li>
-                        <li><a href="#">Trái cây</a></li>
-                        <li><a href="#">Mật ong và tinh dầu</a></li>
+                        <li><a href="@Url.Action("Index_SanPham","SanPham")" class="active">Tất cả</a></li>
+                        <li><a href="@Url.Action("LaySPTheoLoai","SanPham", new {LoaiSP = 1})">Rau củ quả</a></li>
+                        <li><a href="@Url.Action("LaySPTheoLoai","SanPham", new {LoaiSP = 2})">Các loại hạt</a></li>
+                        <li><a href="@Url.Action("LaySPTheoLoai","SanPham", new {LoaiSP = 3})">Trái cây</a></li>
+                        <li><a href="@Url.Action("LaySPTheoLoai","SanPham", new {LoaiSP = 4})">Mật ong và tinh dầu</a></li>
                     </ul>
                 </div>
             </div>

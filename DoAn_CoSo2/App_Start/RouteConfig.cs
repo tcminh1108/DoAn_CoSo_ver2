@@ -15,8 +15,8 @@ namespace DoAn_CoSo2
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}",
+                defaults: new { controller = "TrangChu", action = "Index_TrangChu" }
             );
         }
     }

@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_LayoutDangKy.cshtml";
+}
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-form validate-form">
+                    <span class="login100-form-title p-b-43" style="color: #82AE46">
+                        ĐĂNG KÝ
+                    </span>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true)
+
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="gmail">
+                            <span class="focus-input100"></span>
+                            <span class="label-input100">Gmail</span>
+                        </div>
+
+
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <input class="input100" type="password" name="matkhau">
+                            <span class="focus-input100"></span>
+                            <span class="label-input100">Mật Khẩu</span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <input class="input100" type="password" name="nhaplaimatkhau">
+                            <span class="focus-input100"></span>
+                            <span class="label-input100">Nhập Lại Mật Khẩu</span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="hotenkh">
+                            <span class="focus-input100"></span>
+                            <span class="label-input100">Họ Và Tên</span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="sdt">
+                            <span class="focus-input100"></span>
+                            <span class="label-input100">Số Điện Thoại</span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="date" name="ngaysinh">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="flex-sb-m w-full p-t-3 p-b-32">
+                            <div class="contact100-form-checkbox">
+                                <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                                <label class="label-checkbox100" for="ckb1">
+                                    Hiện Mật Khẩu
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="container-login100-form-btn" >
+                            <input class="login100-form-btn" style="background-color: #82AE46" type="submit" value="Đăng Ký" />
+                        </div>
+
+                        <div class="text-center p-t-46 p-b-20">
+                            <span class="txt2">
+                                Đã có tài khoản? 
+                            </span>
+
+                            <a href="@Url.Action("DangNhap","NguoiDung")">
+                                ĐĂNG NHẬP NGAY
+                            </a>
+                        </div>
+                    }
+                </div>
+
+                <div class="login100-more" style="background-image: url('../img_giaodien/bg_2.jpg');">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
